@@ -13,7 +13,7 @@
 <!-- /BADGES -->
 
 
-###Customize your console like a dignitary.
+###Customize your Node.JS console like a dignitary.
 
 <!-- DESCRIPTION/ -->
 
@@ -99,3 +99,8 @@ console.info(
 - colors.red
 - colors.white
 - colors.yellow
+
+
+## TODOs:
+
+- Make it browser friendly (currently is scoped for Node.JS console only)

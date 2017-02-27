@@ -4,8 +4,7 @@
 
 <!-- /TITLE -->
 
-
-<h2>Customize your console like a dignitary.</h2>
+###Customize your console like a dignitary.
 
 <!-- BADGES/ -->
 

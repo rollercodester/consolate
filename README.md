@@ -4,8 +4,6 @@
 
 <!-- /TITLE -->
 
-###Customize your console like a dignitary.
-
 <!-- BADGES/ -->
 
 <span class="badge-travisci"><a href="http://travis-ci.org/rollercodester/consolate" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/rollercodester/consolate/master.svg" alt="Travis CI Build Status" /></a></span>
@@ -14,6 +12,7 @@
 
 <!-- /BADGES -->
 
+###Customize your console like a dignitary.
 
 <!-- DESCRIPTION/ -->
 

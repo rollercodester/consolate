@@ -4,13 +4,14 @@
 
 <!-- /TITLE -->
 
+
 <!-- BADGES/ -->
 
 <span class="badge-travisci"><a href="http://travis-ci.org/rollercodester/consolate" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/rollercodester/consolate/master.svg" alt="Travis CI Build Status" /></a></span>
 <span class="badge-npmversion"><a href="https://npmjs.org/package/consolate" title="View this project on NPM"><img src="https://img.shields.io/npm/v/consolate.svg" alt="NPM version" /></a></span>
-<span class="badge-npmdownloads"><a href="https://npmjs.org/package/consolate" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/consolate.svg" alt="NPM downloads" /></a></span>
 
 <!-- /BADGES -->
+
 
 ###Customize your console like a dignitary.
 
@@ -19,6 +20,7 @@
 Create an unlimited number of intuitive log functions that Consolate adds to the console object&mdash;even override built-in functions (error, info, warn, etc.) And while you're at it, feel free to easily define colors and prefixes for each log function, too!
 
 <!-- /DESCRIPTION -->
+
 
 ## Install
 

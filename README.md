@@ -28,10 +28,6 @@ Create an unlimited number of intuitive log functions that Consolate adds to the
 npm install --save consolate
 ```
 
-<a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>NPM</h3></a><ul>
-<li>Install: <code>npm install --save consolate</code></li>
-<li>Module: <code>require('consolate')</code></li></ul>
-
 ## Usage
 
 ```javascript

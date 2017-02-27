@@ -1,0 +1,40 @@
+{
+  "name": "color-console",
+  "description": "Customize your console.",
+  "version": "0.0.1",
+  "author": "Ryan Howard @rollercodester",
+  "homepage": "https://github.com/rollercodester/color-console",
+  "bugs": "https://github.com/rollercodester/color-console/issues",
+  "keywords": [
+    "ansi",
+    "terminal",
+    "colors",
+    "console",
+    "console.log",
+    "console.error",
+    "console.info",
+    "console.warn"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rollercodester/color-console.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack -p",
+    "prepublish": "npm run test && npm run build",
+    "test": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register"
+  },
+  "main": "bin",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-latest": "^6.22.0",
+    "cross-env": "^3.1.4",
+    "mocha": "*",
+    "webpack": "^2.2.1"
+  },
+  "files": [
+    "bin"
+  ]
+}

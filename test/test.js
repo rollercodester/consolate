@@ -1,0 +1,163 @@
+import assert from 'assert'
+import ColorConsole, { colors, testLogString } from '../lib/index.js'
+
+
+describe('color-console', () => {
+
+	let oldError
+	let oldInfo
+	let oldWarn
+	let oldDebug
+	let oldSuccess
+
+	beforeEach(() => {
+
+		oldError = console.error
+		oldInfo = console.info
+		oldWarn = console.warn
+		oldDebug = console.debug
+		oldSuccess = console.success
+
+	})
+
+	afterEach(() => {
+
+		console.error = oldError
+		console.info = oldInfo
+		console.warn = oldWarn
+		console.debug = oldDebug
+		console.success = oldSuccess
+
+	})
+
+	it('should be okay with no options', () => {
+
+		ColorConsole()
+
+		console.log()
+
+	})
+
+	it('should be okay with no prefix', () => {
+
+		ColorConsole({
+			info: {
+				color: colors.darkGray
+			}
+		})
+
+		console.log()
+		console.info('\t\tNo prefix test')
+
+		console.log()
+
+	})
+
+	it('should monkey-patch existing log functions', () => {
+
+		ColorConsole({
+			error: {
+				color: colors.red,
+				prefix: '\t\tERROR: '
+			},
+			info: {
+				color: colors.cyan,
+				prefix: '\t\tINFO: '
+			},
+			warn: {
+				color: colors.yellow,
+				prefix: '\t\tWARNING: '
+			}
+		})
+
+		assert.notEqual(oldError, console.error)
+		console.log()
+		console.error('Error test')
+
+		assert.notEqual(oldInfo, console.info)
+		console.info('Info test')
+
+		assert.notEqual(oldWarn, console.warn)
+		console.warn('Warn test')
+
+		console.log()
+
+	})
+
+	it('should monkey-patch new log functions', () => {
+
+		const oldDebug = console.debug
+		const oldSuccess = console.success
+
+		ColorConsole({
+			debug: {
+				color: colors.magenta,
+				prefix: '\t\tDEBUG: '
+			},
+			success: {
+				color: colors.green,
+				prefix: '\t\tSUCCESS: '
+			}
+		})
+
+		assert.notEqual(oldDebug, console.debug)
+		console.log()
+		console.debug('Debug test')
+
+		assert.notEqual(oldSuccess, console.success)
+		console.success('Success test')
+
+		console.log()
+
+	})
+
+	it('should handle a mix of string, native object, and object literal arguments', () => {
+
+		const oldDebug = console.debug
+		const oldSuccess = console.success
+
+		ColorConsole({
+			debug: {
+				color: colors.magenta,
+				prefix: '\t\tDEBUG: '
+			}
+		})
+
+		const objLiteral1 = {
+			testKey1: 'testKey1Value',
+			testKey2: {
+				testKey2ChildKey1: 'testKey2ChildKey1Value',
+				testKey2ChildKey2: 'testKey2ChildKey2Value'
+			}
+		}
+
+		const objLiteral2 = {
+			foo: 'bar'
+		}
+
+		const error1 = new Error('Erro1')
+		const error2 = new Error('Error2')
+
+		console.log()
+		console.debug('String1:', 'String2', objLiteral1, 'String3', error1, 'String4', objLiteral2, error2)
+
+		console.log()
+
+	})
+
+	it('should format log string with correct color, prefix, and end with a reset', () => {
+
+		const testPrefix = 'TEST: '
+		const testMessage = 'This is the test message.'
+		const testColor = colors.red
+
+		const logString = testLogString(testPrefix, testMessage, testColor)
+		const compareString = `\x1b[${testColor}m${testPrefix}${testMessage}\x1b[${colors.reset}m`
+
+		assert.equal(logString, compareString)
+
+		console.log()
+
+	})
+
+})

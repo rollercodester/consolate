@@ -1,10 +1,10 @@
 {
-  "name": "color-console",
-  "description": "Customize your console.",
+  "name": "consolate",
+  "description": "Customize your console like a dignitary.",
   "version": "0.0.1",
   "author": "Ryan Howard @rollercodester",
-  "homepage": "https://github.com/rollercodester/color-console",
-  "bugs": "https://github.com/rollercodester/color-console/issues",
+  "homepage": "https://github.com/rollercodester/consolate",
+  "bugs": "https://github.com/rollercodester/consolate/issues",
   "keywords": [
     "ansi",
     "terminal",
@@ -17,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rollercodester/color-console.git"
+    "url": "https://github.com/rollercodester/consolate.git"
   },
   "license": "MIT",
   "scripts": {

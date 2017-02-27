@@ -47,8 +47,7 @@
   "badges": {
     "list": [
       "travisci",
-      "npmversion",
-      "npmdownloads"
+      "npmversion"
     ]
   }
 }

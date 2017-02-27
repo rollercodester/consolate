@@ -34,24 +34,24 @@ import Consolate, { colors } from 'consolate'
 
 Consolate({
   error: {
-      color: colors.red
-    },
-    info: {
-      color: colors.cyan,
-      prefix: 'INFO: '
-    },
-    warn: {
-      color: colors.yellow,
-      prefix: 'WARNING: '
-    },
-    debug: {
-      color: colors.magenta,
-      prefix: 'DEBUG: '
-    },
-    totallyCool: {
-      color: colors.lightRed,
-      prefix: 'Totally Cool Log Entry: '
-    }
+    color: colors.red
+  },
+  info: {
+    color: colors.cyan,
+    prefix: 'INFO: '
+  },
+  warn: {
+    color: colors.yellow,
+    prefix: 'WARNING: '
+  },
+  debug: {
+    color: colors.magenta,
+    prefix: 'DEBUG: '
+  },
+  totallyCool: {
+    color: colors.lightRed,
+    prefix: 'Totally Cool Log Entry: '
+  }
 })
 
 console.error(new Error('Oops, RED with anger and no prefix needed!'))

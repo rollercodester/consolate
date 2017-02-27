@@ -17,7 +17,7 @@
 
 <!-- DESCRIPTION/ -->
 
-Create an unlimited number of intuitive log functions that Consolate adds to the console object&mdash;even override built-in functions (error, info, warn, etc.) And while you're at it, feel free to easily define colors and prefixes for each log function, too!
+Create an unlimited number of intuitive log functions that Consolate adds to the Node.JS console object&mdash;even override built-in functions (error, info, warn, etc.) And while you're at it, feel free to easily define colors and prefixes.
 
 <!-- /DESCRIPTION -->
 

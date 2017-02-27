@@ -6,7 +6,8 @@ module.exports = {
 	entry: './lib/index.js',
 	output: {
 		path: path.resolve(__dirname, 'bin'),
-		filename: 'index.js'
+		filename: 'index.js',
+		libraryTarget: 'commonjs2'
 	},
 	resolve: {
 		modules: ['node_modules']

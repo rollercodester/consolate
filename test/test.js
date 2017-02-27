@@ -1,5 +1,5 @@
 import assert from 'assert'
-import Consolate, { colors, testLogString } from '../lib/index.js'
+import Consolate, { colors, buildLogString } from '../bin/index.js'
 
 
 describe('consolate', () => {
@@ -32,7 +32,7 @@ describe('consolate', () => {
 
 	it('should be okay with no options', () => {
 
-		Consolate()
+		new Consolate()
 
 		console.log()
 
@@ -47,7 +47,7 @@ describe('consolate', () => {
 		})
 
 		console.log()
-		console.info('\t\tNo prefix test')
+		console.info('No prefix test')
 
 		console.log()
 
@@ -58,15 +58,15 @@ describe('consolate', () => {
 		Consolate({
 			error: {
 				color: colors.red,
-				prefix: '\t\tERROR: '
+				prefix: 'ERROR: '
 			},
 			info: {
 				color: colors.cyan,
-				prefix: '\t\tINFO: '
+				prefix: 'INFO: '
 			},
 			warn: {
 				color: colors.yellow,
-				prefix: '\t\tWARNING: '
+				prefix: 'WARNING: '
 			}
 		})
 
@@ -92,11 +92,11 @@ describe('consolate', () => {
 		Consolate({
 			debug: {
 				color: colors.magenta,
-				prefix: '\t\tDEBUG: '
+				prefix: 'DEBUG: '
 			},
 			success: {
 				color: colors.green,
-				prefix: '\t\tSUCCESS: '
+				prefix: 'SUCCESS: '
 			}
 		})
 
@@ -119,7 +119,7 @@ describe('consolate', () => {
 		Consolate({
 			debug: {
 				color: colors.magenta,
-				prefix: '\t\tDEBUG: '
+				prefix: 'DEBUG: '
 			}
 		})
 
@@ -135,7 +135,7 @@ describe('consolate', () => {
 			foo: 'bar'
 		}
 
-		const error1 = new Error('Erro1')
+		const error1 = new Error('Error1')
 		const error2 = new Error('Error2')
 
 		console.log()
@@ -151,7 +151,7 @@ describe('consolate', () => {
 		const testMessage = 'This is the test message.'
 		const testColor = colors.red
 
-		const logString = testLogString(testPrefix, testMessage, testColor)
+		const logString = buildLogString(testPrefix, testMessage, testColor)
 		const compareString = `\x1b[${testColor}m${testPrefix}${testMessage}\x1b[${colors.reset}m`
 
 		assert.equal(logString, compareString)

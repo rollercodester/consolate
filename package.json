@@ -1,6 +1,7 @@
 {
   "name": "consolate",
-  "description": "Customize your console like a dignitary.",
+  "title": "Consolate",
+  "description": "Create an unlimited number of intuitive log functions that Consolate adds to the console object&mdash;even override built-in functions (error, info, warn, etc.) And while you're at it, feel free to easily define colors and prefixes for each log function, too!",
   "version": "1.0.3",
   "author": "Ryan Howard @rollercodester",
   "homepage": "https://github.com/rollercodester/consolate",
@@ -21,8 +22,9 @@
   },
   "license": "MIT",
   "scripts": {
+    "badges": "projectz compile",
     "build": "cross-env NODE_ENV=production webpack -p",
-    "prepublish": "npm run test && npm run build",
+    "prepublish": "npm run test && npm run build && npm run badges",
     "test": "cross-env NODE_ENV=test mocha --compilers js:babel-core/register"
   },
   "main": "bin",
@@ -32,9 +34,21 @@
     "babel-preset-latest": "^6.22.0",
     "cross-env": "^3.1.4",
     "mocha": "*",
+    "projectz": "^1.3.2",
     "webpack": "^2.2.1"
   },
   "files": [
     "bin"
-  ]
+  ],
+  "maintainers": [],
+  "contributors": [
+    "Ryan Howard (https://github.com/rollercodester)"
+  ],
+  "badges": {
+    "list": [
+      "travisci",
+      "npmversion",
+      "npmdownloads"
+    ]
+  }
 }

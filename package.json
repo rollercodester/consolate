@@ -2,6 +2,7 @@
   "name": "consolate",
   "title": "Consolate",
   "description": "Create an unlimited number of intuitive log functions that Consolate adds to the Node.JS console object&mdash;even override built-in functions (error, info, warn, etc.) And while you're at it, feel free to easily define colors and prefixes for each log function.",
+  "version": "1.0.5",
   "author": "Ryan Howard @rollercodester",
   "homepage": "https://github.com/rollercodester/consolate",
   "bugs": "https://github.com/rollercodester/consolate/issues",

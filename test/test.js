@@ -1,8 +1,8 @@
 import assert from 'assert'
-import ColorConsole, { colors, testLogString } from '../lib/index.js'
+import Consolate, { colors, testLogString } from '../lib/index.js'
 
 
-describe('color-console', () => {
+describe('consolate', () => {
 
 	let oldError
 	let oldInfo
@@ -32,7 +32,7 @@ describe('color-console', () => {
 
 	it('should be okay with no options', () => {
 
-		ColorConsole()
+		Consolate()
 
 		console.log()
 
@@ -40,7 +40,7 @@ describe('color-console', () => {
 
 	it('should be okay with no prefix', () => {
 
-		ColorConsole({
+		Consolate({
 			info: {
 				color: colors.darkGray
 			}
@@ -55,7 +55,7 @@ describe('color-console', () => {
 
 	it('should monkey-patch existing log functions', () => {
 
-		ColorConsole({
+		Consolate({
 			error: {
 				color: colors.red,
 				prefix: '\t\tERROR: '
@@ -89,7 +89,7 @@ describe('color-console', () => {
 		const oldDebug = console.debug
 		const oldSuccess = console.success
 
-		ColorConsole({
+		Consolate({
 			debug: {
 				color: colors.magenta,
 				prefix: '\t\tDEBUG: '
@@ -116,7 +116,7 @@ describe('color-console', () => {
 		const oldDebug = console.debug
 		const oldSuccess = console.success
 
-		ColorConsole({
+		Consolate({
 			debug: {
 				color: colors.magenta,
 				prefix: '\t\tDEBUG: '

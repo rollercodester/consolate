@@ -36,44 +36,62 @@ import Consolate, { colors } from 'consolate'
 
 Consolate({
   error: {
-    color: colors.red
+  color: colors.red
   },
   info: {
-    color: colors.cyan,
-    prefix: 'INFO: '
+  color: colors.cyan,
+  prefix: 'INFO: '
   },
   warn: {
-    color: colors.yellow,
-    prefix: 'WARNING: '
+  color: colors.yellow,
+  prefix: 'WARNING: '
   },
   debug: {
-    color: colors.magenta,
-    prefix: 'DEBUG: '
+  color: colors.magenta,
+  prefix: 'DEBUG: '
   },
   totallyCool: {
-    color: colors.lightRed,
-    prefix: 'Totally Cool Log Entry: '
+  color: colors.lightRed,
+  prefix: 'Totally Cool Log Entry: '
   }
 })
 
-console.error(new Error('Oops, RED with anger and no prefix needed!'))
+console.error(
+  new Error('Oops, RED with anger and no prefix needed!')
+)
 
-console.info('Just FYI in a CYAN kind of way.')
+console.info(
+  'Just FYI in a CYAN kind of way.'
+)
 
-console.warn('There is a YELLOW submarine closing in on our position, Captain!')
+console.warn(
+  'There is a YELLOW submarine closing in on our position, Captain!'
+)
 
-console.debug('First one to find a MAGENTA creepy-crawly wins the bug-bash!')
+console.debug(
+  'First one to find a MAGENTA creepy-crawly wins the bug-bash!'
+)
 
-console.totallyCool('Even the Fonz would like this, even if LIGHTRED is kind of girly.')
+console.totallyCool(
+  'Even the Fonz would like this, even if LIGHTRED is kind of girly.'
+)
 
 //
-// You can also combine strings, native objects, and object literals all on one log statement:
+// You can also combine strings, native objects, and
+// object literals all on one log statement:
 //
 const favoriteEditor = 'Sublime'
 console.info(
   'Favorite Editor:',
   favoriteEditor,
-  { name: Sublime, version: { major: 3, minor: 0, build: 3126 } },
+  {
+    name: Sublime,
+    version: {
+      major: 3,
+      minor: 0,
+      build: 3126
+    }
+  },
   'Now, how about an error?',
   new Error('An erro coming right up!'),
   'Okay, that is quite enough.'

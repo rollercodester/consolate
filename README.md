@@ -36,23 +36,23 @@ import Consolate, { colors } from 'consolate'
 
 Consolate({
   error: {
-  color: colors.red
+    color: colors.red
   },
   info: {
-  color: colors.cyan,
-  prefix: 'INFO: '
+    color: colors.cyan,
+    prefix: 'INFO: '
   },
   warn: {
-  color: colors.yellow,
-  prefix: 'WARNING: '
+    color: colors.yellow,
+    prefix: 'WARNING: '
   },
   debug: {
-  color: colors.magenta,
-  prefix: 'DEBUG: '
+    color: colors.magenta,
+    prefix: 'DEBUG: '
   },
   totallyCool: {
-  color: colors.lightRed,
-  prefix: 'Totally Cool Log Entry: '
+    color: colors.lightRed,
+    prefix: 'Totally Cool Log Entry: '
   }
 })
 

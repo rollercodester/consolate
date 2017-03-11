@@ -1,46 +1,30 @@
-import assert from 'assert'
-import Consolate, { colors, buildLogString } from '../bin/index.js'
+var assert = require('assert')
+var consolate = require('../bin/index.js')
+var colors = consolate.colors
 
 
-describe('consolate', () => {
-
-  let oldError
-  let oldInfo
-  let oldWarn
-  let oldDebug
-  let oldSuccess
+describe('consolate', function() {
 
   beforeEach(() => {
 
-    oldError = console.error
-    oldInfo = console.info
-    oldWarn = console.warn
-    oldDebug = console.debug
-    oldSuccess = console.success
 
   })
 
   afterEach(() => {
 
-    console.error = oldError
-    console.info = oldInfo
-    console.warn = oldWarn
-    console.debug = oldDebug
-    console.success = oldSuccess
 
   })
 
-  it('should be okay with no options', () => {
+  it('should be okay with no options', function() {
 
-    new Consolate()
-
+    consolate.init()
     console.log()
 
   })
 
-  it('should be okay with no prefix', () => {
+  it('should be okay with no prefix', function() {
 
-    Consolate({
+    consolate.init({
       info: {
         color: colors.darkGray
       }
@@ -48,14 +32,13 @@ describe('consolate', () => {
 
     console.log()
     console.info('No prefix test')
-
     console.log()
 
   })
 
-  it('should log in place', () => {
+  it('should log in place', function() {
 
-    Consolate({
+    consolate.init({
       info: {
         color: colors.lightRed,
         inPlace: true
@@ -64,18 +47,19 @@ describe('consolate', () => {
 
     console.log('This line should be overwritten')
     console.info('Log in place test')
-
     console.log()
 
   })
 
-  it('should animate a cli-spinner prefix for 10 seconds', () => {
+  it('should animate a cli-spinner prefix for 10 seconds', function() {
 
-    Consolate({
+    consolate.init({
       info: {
         color: colors.cyan,
-        inPlace: true,
-        prefix: 'bouncingBall'
+        bullet: {
+          cliSpinner: 'bouncingBall',
+          color: colors.yellow
+        }
       }
     })
 
@@ -83,27 +67,46 @@ describe('consolate', () => {
     console.info('Animated cli-spinner prefix test')
 
     setTimeout(() => {
-      // nothing to do
-    }, 10000)
+      console.log('This should clear the spinner')
+    }, 5000)
 
     console.log()
 
   })
 
-  it('should monkey-patch existing log functions', () => {
+  it('should monkey-patch existing log functions', function() {
 
-    Consolate({
+    oldError = console.error
+    oldInfo = console.info
+    oldWarn = console.warn
+
+    consolate.init({
       error: {
         color: colors.red,
-        prefix: 'ERROR: '
+        prefix: {
+          chars: 'ERROR:',
+          color: colors.lightRed,
+          leftPadding: 1,
+          rightPadding: 2
+        }
       },
       info: {
         color: colors.cyan,
-        prefix: 'INFO: '
+        prefix: {
+          chars: 'INFO:',
+          color: colors.lightCyan,
+          leftPadding: 1,
+          rightPadding: 2
+        }
       },
       warn: {
         color: colors.yellow,
-        prefix: 'WARNING: '
+        prefix: {
+          chars: 'WARN:',
+          color: colors.lightYellow,
+          leftPadding: 1,
+          rightPadding: 2
+        }
       }
     })
 
@@ -119,44 +122,36 @@ describe('consolate', () => {
 
     console.log()
 
+    console.error = oldError
+    console.info = oldInfo
+    console.warn = oldWarn
+
   })
 
-  it('should monkey-patch new log functions', () => {
+  it('should monkey-patch new log functions', function() {
 
-    const oldDebug = console.debug
-    const oldSuccess = console.success
-
-    Consolate({
-      debug: {
-        color: colors.magenta,
-        prefix: 'DEBUG: '
+    consolate.init({
+      testDebug: {
+        color: colors.magenta
       },
-      success: {
-        color: colors.green,
-        prefix: 'SUCCESS: '
+      testSuccess: {
+        color: colors.green
       }
     })
 
-    assert.notEqual(oldDebug, console.debug)
     console.log()
-    console.debug('Debug test')
+    console.testDebug('Debug test')
 
-    assert.notEqual(oldSuccess, console.success)
-    console.success('Success test')
-
+    console.testSuccess('Success test')
     console.log()
 
   })
 
-  it('should handle a mix of string, native object, and object literal arguments', () => {
+  it('should handle a mix of string, native object, and object literal arguments', function() {
 
-    const oldDebug = console.debug
-    const oldSuccess = console.success
-
-    Consolate({
+    consolate.init({
       debug: {
-        color: colors.magenta,
-        prefix: 'DEBUG: '
+        color: colors.magenta
       }
     })
 
@@ -177,12 +172,12 @@ describe('consolate', () => {
 
     console.log()
     console.debug('String1:', 'String2', objLiteral1, 'String3', error1, 'String4', objLiteral2, error2)
-
     console.log()
 
   })
 
-  it('should format log string with correct color, prefix, and end with a reset', () => {
+  /*
+  it('should format log string with correct color, prefix, and end with a reset', function() {
 
     const testPrefix = 'TEST: '
     const testMessage = 'This is the test message.'
@@ -196,5 +191,6 @@ describe('consolate', () => {
     console.log()
 
   })
+  */
 
 })

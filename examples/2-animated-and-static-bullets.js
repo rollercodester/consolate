@@ -2,20 +2,6 @@ var consolate = require('../bin/index.js')
 var colors = consolate.colors
 
 consolate.init({
-  info: {
-    color: colors.cyan,
-    prefix: {
-      chars: 'INFO:',
-      color: colors.lightCyan
-    }
-  },
-  error: {
-    color: colors.red,
-    prefix: {
-      chars: 'ERROR:',
-      color: colors.lightRed
-    }
-  },
   success: {
     color: colors.green,
     bullet: {
@@ -42,14 +28,7 @@ consolate.init({
   }
 })
 
-console.log();
-console.log();
-
-console.info('The built-in info method has been overridden');
-console.error('Not to alarm you, but this is an error message\n');
-
 console.log('We can animate while reporting on long running tasks...\n')
-
 console.progress('Calling github to get source...');
 
 setTimeout(function() {
@@ -58,7 +37,7 @@ setTimeout(function() {
 
   setTimeout(function() {
     console.success('Yay, build passed with no errors.\n');
-  }, 5000);
+  }, 3000);
 
-}, 5000);
+}, 3000);
 

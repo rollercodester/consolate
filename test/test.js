@@ -53,6 +53,43 @@ describe('consolate', () => {
 
   })
 
+  it('should log in place', () => {
+
+    Consolate({
+      info: {
+        color: colors.lightRed,
+        inPlace: true
+      }
+    })
+
+    console.log('This line should be overwritten')
+    console.info('Log in place test')
+
+    console.log()
+
+  })
+
+  it('should animate a cli-spinner prefix for 10 seconds', () => {
+
+    Consolate({
+      info: {
+        color: colors.cyan,
+        inPlace: true,
+        prefix: 'bouncingBall'
+      }
+    })
+
+    console.log('This line should be overwritten')
+    console.info('Animated cli-spinner prefix test')
+
+    setTimeout(() => {
+      // nothing to do
+    }, 10000)
+
+    console.log()
+
+  })
+
   it('should monkey-patch existing log functions', () => {
 
     Consolate({

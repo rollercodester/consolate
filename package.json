@@ -2,7 +2,7 @@
   "name": "consolate",
   "title": "Consolate",
   "description": "Create an unlimited number of intuitive log functions that Consolate adds to the Node.JS console object&mdash;even override built-in functions (error, info, warn, etc.) And while you're at it, feel free to easily define colors and prefixes.",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "author": "Ryan Howard @rollercodester",
   "homepage": "https://github.com/rollercodester/consolate",
   "bugs": "https://github.com/rollercodester/consolate/issues",
@@ -25,7 +25,10 @@
     "badges": "projectz compile",
     "clean": "rm -rf bin",
     "prepublish": "npm run test && npm run badges",
-    "test": "npm run clean && webpack -p && mocha --compilers js:babel-core/register"
+    "test": "npm run clean && webpack -p && mocha --compilers js:babel-core/register",
+    "example1": "node ./examples/example-1.js",
+    "example2": "npm run clean && webpack -p && node ./examples/example-2.js",
+    "docs": "jsdoc2md -d 1 -t doc/readme.hbs lib/index.js > README2.md"
   },
   "main": "bin",
   "devDependencies": {
@@ -33,6 +36,7 @@
     "babel-loader": "^6.3.2",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
+    "jsdoc-to-markdown": "^3.0.0",
     "mocha": "*",
     "projectz": "^1.3.2",
     "webpack": "^2.2.1"
@@ -49,5 +53,9 @@
       "travisci",
       "npmversion"
     ]
+  },
+  "dependencies": {
+    "cli-spinners": "^1.0.0",
+    "restore-cursor": "^2.0.0"
   }
 }

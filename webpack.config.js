@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'bin'),
     filename: 'index.js',
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs'
   },
   resolve: {
     modules: ['node_modules']
@@ -25,5 +25,6 @@ module.exports = {
       }
     ]
   },
-  devtool: false
+  devtool: 'eval-source-map',
+  target: 'node'
 };

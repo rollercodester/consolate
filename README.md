@@ -12,7 +12,7 @@ Easily create intuitive log functions on the console object&mdash;even override 
 * [Overriding Built-in Console Methods](#example2)
 * [Animated vs Static Bullets](#example3)
 * [Smart Log Argument Handling](#example4)
-* [NASA](#example5)
+* [Apollo 11](#example5)
 
 
 <a name="example1"></a>

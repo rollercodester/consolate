@@ -34,7 +34,7 @@
     "examples"
   ],
   "scripts": {
-    "build": "npm run clean && webpack",
+    "build": "npm run clean && webpack -p",
     "clean": "rm -rf bin",
     "docs": "jsdoc2md -d 1 -t doc/readme.hbs lib/index.js > README.md",
     "example1": "node ./examples/1-simple-custom-method.js",

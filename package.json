@@ -30,15 +30,17 @@
   "license": "MIT",
   "main": "bin",
   "files": [
-    "bin"
+    "bin",
+    "examples"
   ],
   "scripts": {
-    "build": "npm run clean && webpack -p",
+    "build": "npm run clean && webpack",
     "clean": "rm -rf bin",
     "docs": "jsdoc2md -d 1 -t doc/readme.hbs lib/index.js > README.md",
-    "example1": "node ./examples/1-custom-info.js",
-    "example2": "node ./examples/2-animated-and-static-bullets.js",
-    "example3": "node ./examples/example-3.js",
+    "example1": "node ./examples/1-simple-custom-method.js",
+    "example2": "node ./examples/2-console-overrides-on-built-in-methods.js",
+    "example3": "node ./examples/3-animated-and-static-bullets.js",
+    "example4": "node ./examples/4-smart-log-argument-handling.js",
     "prepublish": "npm run test && npm run docs",
     "test": "npm run build && mocha"
   },

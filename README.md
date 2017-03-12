@@ -6,17 +6,249 @@
 #### Customize your Node.JS console like a dignitary.
 Easily create intuitive log functions on the console object&mdash;even override built-in console functions (error, info, warn, etc.) And while you're at it, feel free to easily define colors, prefixes, and bullets that can automatically animate [cli-cursors](https://www.npmjs.com/package/cli-spinners).
 
-## API Reference
-![examples/1-custom-info.js](https://cloud.githubusercontent.com/assets/1450389/23826774/b70fc2e8-0658-11e7-9a85-9b4506bc8626.gif)
+## Examples
 
-**Example**  
-```js
-var consolate = require('consolate')consolate.init({   info: {      color: consolate.colors.cyan,      prefix: {         chars: 'INFO:',         color: consolate.colors.lightCyan      }   }})console.log('\n')console.info('This line is being output by my customized "info" log method!')console.log('\n')
+* [Super-simple Custom Console Method](#example1)
+* [Overriding Built-in Console Methods](#example2)
+* [Animated vs Static Bullets](#example3)
+* [Smart Log Argument Handling](#example4)
+* [NASA](#example5)
+
+
+<a name="example1"></a>
+
+#### Super-simple Custom Console Method
+
+![examples/1-simple-custom-method.js](https://cloud.githubusercontent.com/assets/1450389/23828435/20fe2f50-0686-11e7-962f-fbf2702ea259.gif)
+
+```javascript
+var consolate = require('consolate')
+
+consolate.init({
+   arrow: {
+      color: consolate.colors.cyan,
+      prefix: {
+         chars: '>>>>>----->',
+         color: consolate.colors.lightCyan
+      }
+   }
+})
+
+console.arrow('My customized "arrow" log method!')
+
+setTimeout(() => {
+	console.arrow('Just think of the possibilities :-)')
+}, 1500)
+
+setTimeout(() => {
+	console.arrow('And we haven\'t even scratched the surface.')
+}, 3000)
+
+setTimeout(() => {
+	console.arrow('Okay, one more time before moving on.')
+	console.log()
+}, 4500)
 ```
+
+<a name="example2"></a>
+
+#### Overriding Built-in Console Methods
+
+![examples/2-console-overrides-on-built-in-methods.js](https://cloud.githubusercontent.com/assets/1450389/23828470/7610d2f8-0687-11e7-8410-fdf2b567775a.gif)
+
+```javascript
+var consolate = require('consolate')
+
+consolate.init({
+   error: {
+      color: consolate.colors.red,
+      prefix: {
+         chars: 'ERROR:',
+         color: consolate.colors.red
+      }
+   },
+   info: {
+      color: consolate.colors.cyan,
+      prefix: {
+         chars: 'INFO:',
+         color: consolate.colors.lightCyan
+      }
+   },
+   log: {
+      color: consolate.colors.lightBlue,
+      prefix: {
+         chars: '-->',
+         color: consolate.colors.darkGray
+      }
+   },
+   trace: {
+      color: consolate.colors.white
+   },
+   warn: {
+      color: consolate.colors.yellow,
+      prefix: {
+         chars: 'WARNING:',
+         color: consolate.colors.lightYellow
+      }
+   }
+})
+
+console.log()
+console.error('The error method is now RED with anger!')
+
+setTimeout(() => {
+   console.log()
+   console.info('The info method is now FYI in a CYAN kind of way.')
+}, 1500)
+
+setTimeout(() => {
+   console.log()
+   console.log('The log method now has a new twist.')
+}, 3000)
+
+setTimeout(() => {
+   console.log()
+   console.trace('This trace auto-adopts the error override along with its own customizaton')
+}, 4500)
+
+setTimeout(() => {
+   console.log()
+   console.warn('The warn method is now brave, even if it is a little YELLOW.')
+   console.log()
+}, 6000)
+
+```
+
+<a name="example3"></a>
+
+#### Animated vs Static Bullets
+
+![examples/3-animated-and-static-bullets.js](https://cloud.githubusercontent.com/assets/1450389/23828520/e8a89fd4-0688-11e7-9c95-aa3959920f46.gif)
+
+```javascript
+var consolate = require('consolate')
+var colors = consolate.colors
+
+consolate.init({
+   success: {
+      color: colors.green,
+      bullet: {
+         chars: '✔',
+         color: colors.lightGreen,
+         leftPadding: 1,
+         rightPadding: 2
+      }
+   },
+   progress: {
+      color: colors.lightBlue,
+      bullet: {
+         cliSpinner: 'dots',
+         color: colors.lightBlue,
+         leftPadding: 1,
+         rightPadding: 2
+      },
+      prefix: {
+         color: colors.white,
+         chars: 'WORKING:',
+         leftPadding: 0,
+         rightPadding: 1
+      }
+   }
+})
+
+console.log('Use consolate to animate while reporting on long running tasks...\n')
+console.progress('Calling github to get source...')
+
+setTimeout(function() {
+
+   console.progress('Compiling source to create the build...')
+
+}, 3000)
+
+setTimeout(function() {
+
+   console.progress('Executing unit tests against the new build...')
+
+}, 6000)
+
+setTimeout(function() {
+
+   console.success('Yay, build passed with no errors.\n')
+
+}, 9000)
+```
+
+<a name="example4"></a>
+
+#### Smart Log Argument Handling
+
+![examples/4-smart-log-argument-handling.js](https://cloud.githubusercontent.com/assets/1450389/23828602/ff012a0a-068b-11e7-9a9f-26624ad0b5c6.gif)
+
+```javascript
+var consolate = require('consolate')
+
+consolate.init({
+   debug: {
+      color: consolate.colors.magenta,
+      prefix: {
+         chars: 'DEBUG:',
+         color: consolate.colors.lightMagenta
+      }
+   }
+})
+
+//
+//
+// You can combine strings, native objects, and
+// object literals all on one log statement:
+//
+//
+
+const MY_FAVORITE_TEXT_EDITOR = 'Sublime'
+
+console.log('Have you ever needed to log *different* types in a single call?')
+
+setTimeout(() => {
+   console.log('\nIf so, well you\'re in luck. Drum roll please...')
+}, 1500)
+
+setTimeout(() => {
+
+   console.log()
+   console.debug(
+      'Let\'s see how consolate handles 11 different args in one call.\nSurely, it will break.',
+      '\n[reply from consolate]: Hey, don\'t call me Shirley.',
+      '\nChange of subject...my favorite text editor is:',
+      `${MY_FAVORITE_TEXT_EDITOR}.`,
+      '\nAbout Sublime...',
+      {
+         name: 'Sublime',
+         version: {
+            major: 3,
+            minor: 0,
+            build: 3126
+         }
+      },
+      'Now, how about we throw in an error for good measure?',
+      new Error('One error coming right up!'),
+      'What else can we pile on? How about the consolate colors object? Ooooh, yes!',
+      consolate.colors,
+      'Okay, I think you will agree that that is quite enough for just one log call!'
+   )
+
+}, 4000)
+```
+
+<a name="example5"></a>
+
+#### NASA
+
+
+## API Reference
 <a name="module_consolate.init"></a>
 
 ## consolate.init
-![examples/2-animated-and-static-bullets.js](https://cloud.githubusercontent.com/assets/1450389/23827156/c595eeba-0661-11e7-9954-61b5478edc61.gif)
+The initialization function that must be called to enable consolate.
 
 **Kind**: static constant of <code>[consolate](#module_consolate)</code>  
 
@@ -24,10 +256,6 @@ var consolate = require('consolate')consolate.init({   info: {      color: c
 | --- | --- |
 | <code>consolateOptions</code> | Options that drive consolate behavior. |
 
-**Example**  
-```js
-var consolate = require('consolate')consolate.init({   success: {      color: consolate.colors.green,      bullet: {         chars: '✔',         color: consolate.colors.lightGreen,         leftPadding: 1,         rightPadding: 2      }   },   progress: {      color: consolate.colors.lightBlue,      bullet: {         cliSpinner: 'dots',         color: consolate.colors.lightBlue,         leftPadding: 1,         rightPadding: 2      },      prefix: {         color: consolate.colors.white,         chars: 'WORKING:',         leftPadding: 0,         rightPadding: 1      }   }})console.log('We can animate while reporting on long running tasks...');console.progress('Calling github to get source...');setTimeout(function() {   console.progress('Compiling source to create the build...');   setTimeout(function() {      console.success('Yay, build passed with no errors.');   }, 3000);}, 3000);
-```
 <a name="module_consolate..colors"></a>
 
 ## consolate~colors : <code>enum</code>
@@ -116,4 +344,7 @@ Specifies preferences (if any) for including an automatic left-aligned bullet to
 | color | <code>colors</code> | The color to use for the bullet text. |
 | leftPadding | <code>number</code> | The number of spaces to pad on the left side of the bullet. |
 | rightPadding | <code>number</code> | The number of spaces to pad on the right side of the bullet. |
+
+
+
 

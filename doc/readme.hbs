@@ -20,6 +20,7 @@ Easily create intuitive log functions on the console object&mdash;even override 
 * [API Reference](#api)
 
 <a name="examples"></a>
+
 ## Examples
 
 <h3><a name="example1" href='examples/1-simple-custom-method.js'>Super-simple Custom Console Method</a></h3>

@@ -15,7 +15,10 @@
     "console.error",
     "console.info",
     "console.warn",
-    "cli-spinners"
+    "cli-spinners",
+    "spinners",
+    "animation",
+    "progress indicator"
   ],
   "repository": {
     "type": "git",
@@ -42,6 +45,7 @@
     "example3": "node ./examples/3-animated-and-static-bullets.js",
     "example4": "node ./examples/4-smart-log-argument-handling.js",
     "example5": "node ./examples/5-apollo-11.js",
+    "example6": "node ./examples/6-cicd-pipeline.js",
     "prepublish": "npm run test && npm run docs",
     "test": "npm run build && mocha"
   },

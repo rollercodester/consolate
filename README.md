@@ -37,7 +37,7 @@ consolate.init({
 console.arrow('My customized "arrow" log method!')
 
 setTimeout(() => {
-	console.arrow('Just think of the possibilities')
+	console.arrow('Just think of the possibilities :-)')
 }, 1500)
 
 setTimeout(() => {

@@ -23,7 +23,7 @@ Easily create intuitive log functions on the console object&mdash;even override 
 
 ## Examples
 
-<h3><a name="example1" href='examples/1-simple-custom-method.js'>Super-simple Custom Console Method</a></h3>
+<h3><a name="example1" href='https://github.com/rollercodester/consolate/blob/master/examples/1-simple-custom-method.js'>Super-simple Custom Console Method</a></h3>
 
 ![examples/1-simple-custom-method.js](https://cloud.githubusercontent.com/assets/1450389/23828435/20fe2f50-0686-11e7-962f-fbf2702ea259.gif)
 
@@ -56,27 +56,27 @@ setTimeout(() => {
 }, 4500)
 ```
 
-<h3><a name="example2" href='examples/2-console-overrides-on-built-in-methods.js'>Overriding Built-in Console Methods</a></h3>
+<h3><a name="example2" href='https://github.com/rollercodester/consolate/blob/master/examples/2-console-overrides-on-built-in-methods.js'>Overriding Built-in Console Methods</a></h3>
 
 ![examples/2-console-overrides-on-built-in-methods.js](https://cloud.githubusercontent.com/assets/1450389/23828470/7610d2f8-0687-11e7-8410-fdf2b567775a.gif)
 
 
-<h3><a name="example3" href='examples/3-animated-and-static-bullets.js'>Animated vs Static Bullets</a></h3>
+<h3><a name="example3" href='https://github.com/rollercodester/consolate/blob/master/examples/3-animated-and-static-bullets.js'>Animated vs Static Bullets</a></h3>
 
 ![examples/3-animated-and-static-bullets.js](https://cloud.githubusercontent.com/assets/1450389/23828520/e8a89fd4-0688-11e7-9c95-aa3959920f46.gif)
 
 
-<h3><a name="example4" href='examples/4-smart-log-argument-handling.js'>Smart Log Argument Handling</a></h3>
+<h3><a name="example4" href='https://github.com/rollercodester/consolate/blob/master/examples/4-smart-log-argument-handling.js'>Smart Log Argument Handling</a></h3>
 
 ![examples/4-smart-log-argument-handling.js](https://cloud.githubusercontent.com/assets/1450389/23831679/bd7c44d6-06e3-11e7-9e8c-087b0b996a75.gif)
 
 
-<h3><a name="example5" href='examples/5-apollo-11.js'>Apollo 11</a></h3>
+<h3><a name="example5" href='https://github.com/rollercodester/consolate/blob/master/examples/5-apollo-11.js'>Apollo 11</a></h3>
 
 ![examples/5-apollo-11.js](https://cloud.githubusercontent.com/assets/1450389/23831850/6751c74a-06e6-11e7-8340-66e53124a7c0.gif)
 
 
-<h3><a name="example6" href='examples/6-cicd-pipeline.js'>CI/CD Pipeline Console</a></h3>
+<h3><a name="example6" href='https://github.com/rollercodester/consolate/blob/master/examples/6-cicd-pipeline.js'>CI/CD Pipeline Console</a></h3>
 
 ![examples/6-cicd-pipeline.js](https://cloud.githubusercontent.com/assets/1450389/23842310/a584cdfc-0770-11e7-8969-f2d6659ca41a.gif)
 

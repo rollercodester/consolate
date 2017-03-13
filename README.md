@@ -80,7 +80,9 @@ setTimeout(() => {
 
 ![examples/6-cicd-pipeline.js](https://cloud.githubusercontent.com/assets/1450389/23842310/a584cdfc-0770-11e7-8969-f2d6659ca41a.gif)
 
+
 <a name="api"></a>
+
 ## API Reference
 <a name="module_consolate.init"></a>
 

@@ -31,14 +31,12 @@
     "Ryan Howard (https://github.com/rollercodester)"
   ],
   "license": "MIT",
-  "main": "bin",
+  "main": "lib",
   "files": [
-    "bin",
+    "lib",
     "examples"
   ],
   "scripts": {
-    "build": "npm run clean && webpack -p",
-    "clean": "rm -rf bin",
     "docs": "jsdoc2md -d 1 -t doc/readme.hbs lib/index.js > README.md",
     "example1": "node ./examples/1-simple-custom-method.js",
     "example2": "node ./examples/2-console-overrides-on-built-in-methods.js",
@@ -47,18 +45,17 @@
     "example5": "node ./examples/5-apollo-11.js",
     "example6": "node ./examples/6-cicd-pipeline.js",
     "prepublish": "npm run test && npm run docs",
-    "test": "npm run build && mocha"
+    "test": "mocha"
   },
   "dependencies": {
     "cli-spinners": "^1.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.23.1",
-    "babel-loader": "^6.3.2",
-    "babel-preset-latest": "^6.22.0",
-    "babel-preset-stage-0": "^6.22.0",
     "jsdoc-to-markdown": "^3.0.0",
-    "mocha": "*",
-    "webpack": "^2.2.1"
-  }
+    "mocha": "*"
+  },
+  "engineStrict" : true,
+   "engines": {
+       "node": ">=6.4.0"
+   }
 }

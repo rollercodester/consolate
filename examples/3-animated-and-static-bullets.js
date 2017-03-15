@@ -1,4 +1,4 @@
-var consolate = require('../bin/index.js')
+var consolate = require('../lib/index.js')
 var colors = consolate.colors
 
 consolate.init({

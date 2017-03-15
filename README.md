@@ -86,14 +86,14 @@ setTimeout(() => {
 ## API Reference
 <a name="module_consolate.init"></a>
 
-## consolate.init
+## consolate.init(options)
 The initialization function that must be called to enable consolate.
 
-**Kind**: static constant of <code>[consolate](#module_consolate)</code>  
+**Kind**: static method of <code>[consolate](#module_consolate)</code>  
 
-| Type | Description |
-| --- | --- |
-| <code>consolateOptions</code> | Options that drive consolate behavior. |
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>consolateOptions</code> | Options that drive consolate behavior. |
 
 <a name="module_consolate..colors"></a>
 
@@ -125,6 +125,12 @@ Color representations of ANSI output text codes that consolate supports.
 | lightCyan | <code>number</code> | <code>96</code> |  |
 | white | <code>number</code> | <code>97</code> |  |
 
+<a name="module_consolate..restore"></a>
+
+## consolate~restore
+Restores the console object back to its native state by removing all consolate modifications.
+
+**Kind**: inner constant of <code>[consolate](#module_consolate)</code>  
 <a name="module_consolate..consolateOptions"></a>
 
 ## consolate~consolateOptions : <code>Object</code>

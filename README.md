@@ -93,7 +93,7 @@ The initialization function that must be called to enable consolate.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| options | <code>consolateOptions</code> | Options that drive consolate behavior. |
+| options | <code>consolateOptions</code> &#124; <code>string</code> | Options object that drive consolate behavior or a filepath to options yaml file. If options is not provided, then a default options file consolate.yml will be searched for in working directory. See example #6 (examples/6-cicd-pipeline.js) for an example options yaml file. |
 
 <a name="module_consolate..colors"></a>
 

@@ -1,0 +1,9 @@
+consoleMethods:
+  yamlConfigTestMethod1:
+    color: magenta
+  yamlConfigTestMethod2:
+    color: cyan
+    prefix:
+        chars: 'My config was loaded from specified yaml file: '
+        color: yellow
+        leftPadding: 2

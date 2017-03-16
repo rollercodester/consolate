@@ -1,0 +1,74 @@
+consoleMethods:
+  pipeline:
+    color: 94
+  stage:
+    color: 36
+    prefix:
+      chars: STAGE
+      color: 36
+      leftPadding: 3
+  stageSucceed:
+    color: 92
+    bullet:
+      chars: ''
+      leftPadding: 5
+  stageFail:
+    color: 91
+    bullet:
+      chars: ''
+      color: 91
+      leftPadding: 5
+  stepInProgress:
+    color: 35
+    bullet:
+      cliSpinner: dots
+      color: 95
+      leftPadding: 6
+  stepStart:
+    color: 37
+    bullet:
+      chars: "..."
+      color: 37
+      leftPadding: 6
+  stepSucceed:
+    color: 37
+    bullet:
+      chars: "✔"
+      color: 92
+      leftPadding: 6
+  stepFail:
+    color: 91
+    bullet:
+      chars: "✘"
+      color: 91
+      leftPadding: 6
+  stepWarn:
+    color: 33
+    bullet:
+      chars: "▲"
+      color: 33
+      leftPadding: 6
+  taskInProgress:
+    color: 35
+    bullet:
+      cliSpinner: dots
+      color: 95
+      leftPadding: 9
+  taskSucceed:
+    color: 37
+    bullet:
+      chars: "✔"
+      color: 92
+      leftPadding: 9
+  taskFail:
+    color: 91
+    bullet:
+      chars: "✘"
+      color: 91
+      leftPadding: 9
+  taskWarn:
+    color: 33
+    bullet:
+      chars: "▲"
+      color: 33
+      leftPadding: 9

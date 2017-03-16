@@ -1,0 +1,9 @@
+consoleMethods:
+  yamlConfigMethod1:
+    color: magenta
+  yamlConfigMethod2:
+    color: cyan
+    prefix:
+        chars: 'My config was loaded from yaml file: '
+        color: yellow
+        leftPadding: 2

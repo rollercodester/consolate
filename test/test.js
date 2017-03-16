@@ -1,6 +1,7 @@
-var assert = require('assert')
-var consolate = require('../lib/index.js')
-var colors = consolate.colors
+const assert = require('assert')
+const consolate = require('../lib/index.js')
+const colors = consolate.colors
+const path = require('path')
 
 
 describe('consolate', function() {
@@ -218,6 +219,22 @@ describe('consolate', function() {
       assert.equal(oldError, console.error)
       assert.equal(oldInfo, console.info)
       assert.equal(oldWarn, console.warn)
+
+   })
+
+   it('should load options from default yaml file', function() {
+
+      consolate.init()
+      assert(console.yamlConfigMethod1)
+      assert(console.yamlConfigMethod2)
+
+   })
+
+   it ('should load options from passed in file path', function() {
+
+      consolate.init(path.resolve(__dirname, 'test-consolate.yml'))
+      assert(console.yamlConfigTestMethod1)
+      assert(console.yamlConfigTestMethod2)
 
    })
 
